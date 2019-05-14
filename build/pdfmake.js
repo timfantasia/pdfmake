@@ -7178,7 +7178,7 @@ function cache(target, key, descriptor) {
     var get = descriptor.get;
     descriptor.get = function () {
       var value = get.call(this);
-      _Object$defineProperty(this, key, { value: value });
+      _Object$defineProperty(this, key, { value: value, writable: true });
       return value;
     };
   } else if (typeof descriptor.value === 'function') {
